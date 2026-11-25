@@ -1,0 +1,20 @@
+plugins {
+    id 'com.android.application' version '8.7.3'
+}
+
+android {
+    namespace 'io.github.alphacatmeow.ruankaoquiz'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'io.github.alphacatmeow.ruankaoquiz'
+        minSdk 24
+        targetSdk 34
+        versionCode 100
+        versionName '1.0.0'
+    }
+    sourceSets.main.assets.srcDir '../../dist/build/h5'
+}
+
+dependencies {
+    implementation 'androidx.webkit:webkit:1.12.1'
+}

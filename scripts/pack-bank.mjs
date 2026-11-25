@@ -14,7 +14,8 @@ import { fileURLToPath } from 'node:url'
 import { cleanQuestions, MATERIAL_CATEGORIES, splitParagraphs, SUBJECTS } from './lib/bank-clean.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const IN_DIR = path.join(ROOT, '.import', 'out')
+const IN_DIR = process.env.QUIZ_BANK_INPUT || path.join(ROOT, '.import', 'out')
+const publicOnly = process.argv.includes('--public')
 const SRC_DIR = path.join(ROOT, 'src')
 const INDEX_FILE = path.join(SRC_DIR, 'data', 'bank-index.ts')
 const PAGES_JSON = path.join(SRC_DIR, 'pages.json')
@@ -37,10 +38,12 @@ function readJson(name) {
 
 /* ---------- 读取输入 ---------- */
 
-const sources = readJson('sources.json')
-const questions = readJson('questions.json')
-const subjective = readJson('subjective.json')
-const materials = readJson('materials.json')
+const sources = readJson('sources.json').filter((s) => !publicOnly || s.kind === 'exam')
+const includedIds = new Set(sources.map((s) => s.id))
+const includeItem = (item) => !publicOnly || includedIds.has(item.sourceId)
+const questions = readJson('questions.json').filter(includeItem)
+const subjective = readJson('subjective.json').filter(includeItem)
+const materials = publicOnly ? [] : readJson('materials.json')
 
 const subjectIds = new Set(SUBJECTS.map((s) => s.id))
 const sourceIds = new Set(sources.map((s) => s.id))
@@ -209,6 +212,7 @@ import type { BankIndex } from '@/types'
 
 export const BANK_INDEX: BankIndex = ${JSON.stringify(index, null, 1)}
 `
+fs.mkdirSync(path.dirname(INDEX_FILE), { recursive: true })
 fs.writeFileSync(INDEX_FILE, indexTs, 'utf8')
 
 /* ---------- 报告 ---------- */

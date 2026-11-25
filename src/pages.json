@@ -1,0 +1,127 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "软考刷题"
+			}
+		},
+		{
+			"path": "pages/materials/materials",
+			"style": {
+				"navigationBarTitleText": "资料"
+			}
+		},
+		{
+			"path": "pages/wrong/wrong",
+			"style": {
+				"navigationBarTitleText": "错题本"
+			}
+		},
+		{
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/sources/sources",
+			"style": {
+				"navigationBarTitleText": "题集练习"
+			}
+		},
+		{
+			"path": "pages/practice/practice",
+			"style": {
+				"navigationBarTitleText": "练习"
+			}
+		},
+		{
+			"path": "pages/exam/exam",
+			"style": {
+				"navigationBarTitleText": "模拟考试"
+			}
+		},
+		{
+			"path": "pages/result/result",
+			"style": {
+				"navigationBarTitleText": "考试成绩"
+			}
+		},
+		{
+			"path": "pages/subjective/list",
+			"style": {
+				"navigationBarTitleText": "主观题"
+			}
+		},
+		{
+			"path": "pages/subjective/detail",
+			"style": {
+				"navigationBarTitleText": "主观题"
+			}
+		},
+		{
+			"path": "pages/reader/reader",
+			"style": {
+				"navigationBarTitleText": "阅读"
+			}
+		}
+	],
+	"subPackages": [
+		{
+			"root": "bankpkg1",
+			"pages": [{ "path": "pages/index", "style": { "navigationBarTitleText": "数据包" } }]
+		},
+		{
+			"root": "bankpkg2",
+			"pages": [{ "path": "pages/index", "style": { "navigationBarTitleText": "数据包" } }]
+		},
+		{
+			"root": "bankpkg3",
+			"pages": [{ "path": "pages/index", "style": { "navigationBarTitleText": "数据包" } }]
+		},
+		{
+			"root": "bankpkg4",
+			"pages": [{ "path": "pages/index", "style": { "navigationBarTitleText": "数据包" } }]
+		},
+		{
+			"root": "bankpkg5",
+			"pages": [{ "path": "pages/index", "style": { "navigationBarTitleText": "数据包" } }]
+		},
+		{
+			"root": "bankpkg6",
+			"pages": [{ "path": "pages/index", "style": { "navigationBarTitleText": "数据包" } }]
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "软考刷题",
+		"navigationBarBackgroundColor": "#2F6FED",
+		"backgroundColor": "#F5F6F8"
+	},
+	"tabBar": {
+		"color": "#8F959E",
+		"selectedColor": "#2F6FED",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "white",
+		"fontSize": "14px",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/materials/materials",
+				"text": "资料"
+			},
+			{
+				"pagePath": "pages/wrong/wrong",
+				"text": "错题本"
+			},
+			{
+				"pagePath": "pages/mine/mine",
+				"text": "我的"
+			}
+		]
+	}
+}

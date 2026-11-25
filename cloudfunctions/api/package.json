@@ -1,0 +1,13 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "软考刷题 云函数：登录、题库、进度、考试",
+  "main": "index.js",
+  "private": true,
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "wx-server-sdk": "^2.6.3"
+  }
+}

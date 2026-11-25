@@ -2,15 +2,19 @@ plugins {
     id 'com.android.application' version '8.7.3'
 }
 
+// Build the local full-bank app with :app:assembleDebug -PpersonalBank=true.
+final boolean personalBank = providers.gradleProperty('personalBank').orElse('false').get().toBoolean()
+
 android {
     namespace 'io.github.alphacatmeow.ruankaoquiz'
     compileSdk 35
     defaultConfig {
-        applicationId 'io.github.alphacatmeow.ruankaoquiz'
+        applicationId = personalBank ? 'io.github.alphacatmeow.ruankaoquiz.personal' : 'io.github.alphacatmeow.ruankaoquiz'
+        manifestPlaceholders = [appLabel: personalBank ? '软考刷题（自用版）' : '软考刷题']
         minSdk 24
         targetSdk 34
-        versionCode 100
-        versionName '1.0.0'
+        versionCode 101
+        versionName '1.0.1'
     }
     sourceSets.main.assets.srcDir '../../dist/build/h5'
 }

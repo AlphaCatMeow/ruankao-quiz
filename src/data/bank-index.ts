@@ -35,6 +35,60 @@ export const BANK_INDEX: BankIndex = {
    "chunk": "q:zhong-2024b-huiyi"
   },
   {
+   "id": "zhong-2013a",
+   "subjectId": "zhong",
+   "title": "2013年上半年真题（部分）",
+   "kind": "exam",
+   "questionCount": 63,
+   "subjectiveCount": 0,
+   "chunk": "q:zhong-2013a"
+  },
+  {
+   "id": "zhong-2012a",
+   "subjectId": "zhong",
+   "title": "2012年上半年真题（部分）",
+   "kind": "exam",
+   "questionCount": 71,
+   "subjectiveCount": 0,
+   "chunk": "q:zhong-2012a"
+  },
+  {
+   "id": "zhong-2011b",
+   "subjectId": "zhong",
+   "title": "2011年下半年真题（下午案例）",
+   "kind": "exam",
+   "questionCount": 0,
+   "subjectiveCount": 5,
+   "chunk": ""
+  },
+  {
+   "id": "zhong-2010b",
+   "subjectId": "zhong",
+   "title": "2010年下半年真题（部分）",
+   "kind": "exam",
+   "questionCount": 63,
+   "subjectiveCount": 0,
+   "chunk": "q:zhong-2010b"
+  },
+  {
+   "id": "zhong-2010a",
+   "subjectId": "zhong",
+   "title": "2010年上半年真题（部分）",
+   "kind": "exam",
+   "questionCount": 74,
+   "subjectiveCount": 0,
+   "chunk": "q:zhong-2010a"
+  },
+  {
+   "id": "zhong-2009b",
+   "subjectId": "zhong",
+   "title": "2009年下半年真题（部分）",
+   "kind": "exam",
+   "questionCount": 70,
+   "subjectiveCount": 0,
+   "chunk": "q:zhong-2009b"
+  },
+  {
    "id": "gao-2018a",
    "subjectId": "gao",
    "title": "2018年上半年真题",
@@ -123,6 +177,46 @@ export const BANK_INDEX: BankIndex = {
    "sourceId": "zhong-2024b-huiyi",
    "kind": "calc",
    "title": "2024年11月真题回忆版·案例一",
+   "hasAnswer": true
+  },
+  {
+   "id": "zhong-2011b-case-1",
+   "subjectId": "zhong",
+   "sourceId": "zhong-2011b",
+   "kind": "case",
+   "title": "2011 年下半年·试题一·无线网络项目的可行性研究",
+   "hasAnswer": true
+  },
+  {
+   "id": "zhong-2011b-case-2",
+   "subjectId": "zhong",
+   "sourceId": "zhong-2011b",
+   "kind": "calc",
+   "title": "2011 年下半年·试题二·项目进度与关键路径",
+   "hasAnswer": true
+  },
+  {
+   "id": "zhong-2011b-case-3",
+   "subjectId": "zhong",
+   "sourceId": "zhong-2011b",
+   "kind": "case",
+   "title": "2011 年下半年·试题三·质量保证与质量控制",
+   "hasAnswer": true
+  },
+  {
+   "id": "zhong-2011b-case-4",
+   "subjectId": "zhong",
+   "sourceId": "zhong-2011b",
+   "kind": "case",
+   "title": "2011 年下半年·试题四·总价合同与需求变更",
+   "hasAnswer": true
+  },
+  {
+   "id": "zhong-2011b-case-5",
+   "subjectId": "zhong",
+   "sourceId": "zhong-2011b",
+   "kind": "case",
+   "title": "2011 年下半年·试题五·“银证通”系统的变更管理",
    "hasAnswer": true
   },
   {
@@ -289,6 +383,31 @@ export const BANK_INDEX: BankIndex = {
    "path": "bankpkg1/static/q/zhong-2024b-huiyi.json",
    "bytes": 5673
   },
+  "q:zhong-2013a": {
+   "pkg": "bankpkg1",
+   "path": "bankpkg1/static/q/zhong-2013a.json",
+   "bytes": 29526
+  },
+  "q:zhong-2012a": {
+   "pkg": "bankpkg1",
+   "path": "bankpkg1/static/q/zhong-2012a.json",
+   "bytes": 36007
+  },
+  "q:zhong-2010b": {
+   "pkg": "bankpkg1",
+   "path": "bankpkg1/static/q/zhong-2010b.json",
+   "bytes": 37034
+  },
+  "q:zhong-2010a": {
+   "pkg": "bankpkg1",
+   "path": "bankpkg1/static/q/zhong-2010a.json",
+   "bytes": 35850
+  },
+  "q:zhong-2009b": {
+   "pkg": "bankpkg1",
+   "path": "bankpkg1/static/q/zhong-2009b.json",
+   "bytes": 28513
+  },
   "q:gao-2018a": {
    "pkg": "bankpkg1",
    "path": "bankpkg1/static/q/gao-2018a.json",
@@ -337,7 +456,7 @@ export const BANK_INDEX: BankIndex = {
   "s:zhong": {
    "pkg": "bankpkg1",
    "path": "bankpkg1/static/s/zhong.json",
-   "bytes": 2057
+   "bytes": 14466
   },
   "s:gao": {
    "pkg": "bankpkg1",

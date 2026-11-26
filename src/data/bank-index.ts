@@ -93,7 +93,7 @@ export const BANK_INDEX: BankIndex = {
    "subjectId": "gao",
    "title": "2018年上半年真题",
    "kind": "exam",
-   "questionCount": 68,
+   "questionCount": 72,
    "subjectiveCount": 2,
    "chunk": "q:gao-2018a"
   },
@@ -102,7 +102,7 @@ export const BANK_INDEX: BankIndex = {
    "subjectId": "gao",
    "title": "2018年下半年真题",
    "kind": "exam",
-   "questionCount": 64,
+   "questionCount": 72,
    "subjectiveCount": 3,
    "chunk": "q:gao-2018b"
   },
@@ -111,7 +111,7 @@ export const BANK_INDEX: BankIndex = {
    "subjectId": "gao",
    "title": "2019年上半年真题",
    "kind": "exam",
-   "questionCount": 65,
+   "questionCount": 68,
    "subjectiveCount": 3,
    "chunk": "q:gao-2019a"
   },
@@ -120,7 +120,7 @@ export const BANK_INDEX: BankIndex = {
    "subjectId": "gao",
    "title": "2020年下半年真题",
    "kind": "exam",
-   "questionCount": 74,
+   "questionCount": 75,
    "subjectiveCount": 3,
    "chunk": "q:gao-2020b"
   },
@@ -129,7 +129,7 @@ export const BANK_INDEX: BankIndex = {
    "subjectId": "gao",
    "title": "2021年上半年真题",
    "kind": "exam",
-   "questionCount": 66,
+   "questionCount": 75,
    "subjectiveCount": 1,
    "chunk": "q:gao-2021a"
   },
@@ -138,7 +138,7 @@ export const BANK_INDEX: BankIndex = {
    "subjectId": "gao",
    "title": "2021年下半年真题",
    "kind": "exam",
-   "questionCount": 69,
+   "questionCount": 73,
    "subjectiveCount": 2,
    "chunk": "q:gao-2021b"
   },
@@ -147,7 +147,7 @@ export const BANK_INDEX: BankIndex = {
    "subjectId": "gao",
    "title": "2022年上半年真题",
    "kind": "exam",
-   "questionCount": 68,
+   "questionCount": 74,
    "subjectiveCount": 1,
    "chunk": "q:gao-2022a"
   },
@@ -156,7 +156,7 @@ export const BANK_INDEX: BankIndex = {
    "subjectId": "gao",
    "title": "2022年下半年真题",
    "kind": "exam",
-   "questionCount": 69,
+   "questionCount": 74,
    "subjectiveCount": 1,
    "chunk": "q:gao-2022b"
   },
@@ -165,7 +165,7 @@ export const BANK_INDEX: BankIndex = {
    "subjectId": "gao",
    "title": "2023年上半年真题",
    "kind": "exam",
-   "questionCount": 69,
+   "questionCount": 71,
    "subjectiveCount": 3,
    "chunk": "q:gao-2023a"
   }
@@ -411,47 +411,47 @@ export const BANK_INDEX: BankIndex = {
   "q:gao-2018a": {
    "pkg": "bankpkg1",
    "path": "bankpkg1/static/q/gao-2018a.json",
-   "bytes": 58345
+   "bytes": 60749
   },
   "q:gao-2018b": {
    "pkg": "bankpkg1",
    "path": "bankpkg1/static/q/gao-2018b.json",
-   "bytes": 66673
+   "bytes": 70653
   },
   "q:gao-2019a": {
    "pkg": "bankpkg1",
    "path": "bankpkg1/static/q/gao-2019a.json",
-   "bytes": 79091
+   "bytes": 80204
   },
   "q:gao-2020b": {
    "pkg": "bankpkg1",
    "path": "bankpkg1/static/q/gao-2020b.json",
-   "bytes": 85866
+   "bytes": 86249
   },
   "q:gao-2021a": {
    "pkg": "bankpkg1",
    "path": "bankpkg1/static/q/gao-2021a.json",
-   "bytes": 46454
+   "bytes": 51392
   },
   "q:gao-2021b": {
    "pkg": "bankpkg1",
    "path": "bankpkg1/static/q/gao-2021b.json",
-   "bytes": 70285
+   "bytes": 72753
   },
   "q:gao-2022a": {
    "pkg": "bankpkg1",
    "path": "bankpkg1/static/q/gao-2022a.json",
-   "bytes": 68352
+   "bytes": 72927
   },
   "q:gao-2022b": {
    "pkg": "bankpkg1",
    "path": "bankpkg1/static/q/gao-2022b.json",
-   "bytes": 100484
+   "bytes": 103125
   },
   "q:gao-2023a": {
    "pkg": "bankpkg1",
    "path": "bankpkg1/static/q/gao-2023a.json",
-   "bytes": 105294
+   "bytes": 106042
   },
   "s:zhong": {
    "pkg": "bankpkg1",

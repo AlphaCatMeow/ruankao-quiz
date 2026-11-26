@@ -9,6 +9,7 @@ permissions:
 
 jobs:
   apk:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,17 +29,34 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-      - run: gradle -p android :app:assembleDebug
-      - name: Verify APK signature and bundled content
+      - run: gradle -p android :app:assembleRelease
+      - name: Sign and verify release APK
+        shell: bash
+        env:
+          ANDROID_RELEASE_KEYSTORE_BASE64: ${{ secrets.ANDROID_RELEASE_KEYSTORE_BASE64 }}
+          ANDROID_RELEASE_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_RELEASE_KEYSTORE_PASSWORD }}
         run: |
-          apk=android/app/build/outputs/apk/debug/app-debug.apk
-          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify "$apk"
+          set -euo pipefail
+          : "${ANDROID_RELEASE_KEYSTORE_BASE64:?Android release keystore is missing}"
+          : "${ANDROID_RELEASE_KEYSTORE_PASSWORD:?Android release password is missing}"
+          umask 077
+          keystore=$(mktemp "$RUNNER_TEMP/android-signing.XXXXXX")
+          trap 'rm -f "$keystore"' EXIT
+          printf '%s' "$ANDROID_RELEASE_KEYSTORE_BASE64" | base64 --decode > "$keystore"
+          tools="$ANDROID_HOME/build-tools/35.0.0"
+          unsigned=android/app/build/outputs/apk/release/app-release-unsigned.apk
+          aligned="$RUNNER_TEMP/ruankao-quiz-aligned.apk"
+          apk=ruankao-quiz.apk
+          "$tools/zipalign" -P 16 -f 4 "$unsigned" "$aligned"
+          "$tools/apksigner" sign --ks "$keystore" --ks-key-alias ruankao-quiz \
+            --ks-pass env:ANDROID_RELEASE_KEYSTORE_PASSWORD --out "$apk" "$aligned"
+          cert=$("$tools/apksigner" verify --print-certs "$apk" | sed -n 's/^Signer #1 certificate SHA-256 digest: //p')
+          test "$cert" = '3cec675f5aa9089450fb1eb01eba60b8ca0fd3ee7fa9b52d56ac37b367428bd4'
           unzip -Z1 "$apk" > "$RUNNER_TEMP/apk-entries.txt"
           grep -Fx assets/index.html "$RUNNER_TEMP/apk-entries.txt"
           grep -E '^assets/bankpkg[0-9]+/static/q/.+[.]json$' "$RUNNER_TEMP/apk-entries.txt"
-          cp "$apk" ruankao-quiz-debug.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: ruankao-quiz-debug
-          path: ruankao-quiz-debug.apk
+          name: ruankao-quiz
+          path: ruankao-quiz.apk
           if-no-files-found: error

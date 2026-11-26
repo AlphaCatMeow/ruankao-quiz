@@ -13,8 +13,8 @@ android {
         manifestPlaceholders = [appLabel: personalBank ? '软考刷题（自用版）' : '软考刷题']
         minSdk 24
         targetSdk 34
-        versionCode 102
-        versionName '1.0.2'
+        versionCode 103
+        versionName '1.1.0'
     }
     sourceSets.main.assets.srcDir '../../dist/build/h5'
 }
